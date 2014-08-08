@@ -15,7 +15,7 @@ using System.Collections;
  * 
  * Usage:
  * 
- * 1) Create a plane
+ * 1) Create a plane - Disable the renderer
  * 2) Point your camera straight at the plane (in 2D, Orthographic mode works best)
  * 3) Drag this script into your Project
  * 4) Drag the script onto the plane
