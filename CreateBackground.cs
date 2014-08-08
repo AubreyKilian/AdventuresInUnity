@@ -1,6 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* CreateBackground.cs
+ * 
+ * Written by: Aubrey Kilian <aubreykilian (at) gmail (dot) com
+ * Date: 2014-08-08
+ * 
+ * Purpose:
+ * Tile a plane to be used as a background with a prefab, optionally allowing the background to rotate.
+ * 
+ * License: Apache 2.0
+ * 
+ * Use as you wish, please let me know if you do.
+ * 
+ * Usage:
+ * 
+ * 1) Create a plane
+ * 2) Point your camera straight at the plane (in 2D, Orthographic mode works best)
+ * 3) Drag this script into your Project
+ * 4) Drag the script onto the plane
+ * 5) Drag your image you want to use into your project
+ * 6) Create a prefab of the image (Drag image from Project into Hierarchy, Draw image from Hierarchy to Project, Delete image from Hierarchy)
+ * 7) Click plane
+ * 8) Drag newly created prefab into "Background Image" property of script in Inspector
+ * 9) Adjust other optional values in Inspector for script
+ * 
+ */
+
 public class CreateBackground : MonoBehaviour
 {
 	public GameObject BackgroundImage;
