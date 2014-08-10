@@ -5,6 +5,7 @@ using System.Collections;
  * 
  * Written by: Aubrey Kilian <aubreykilian (at) gmail (dot) com
  * Date: 2014-08-08
+ * See more: http://www.dociletree.co.za/
  * 
  * Purpose:
  * Tile a plane to be used as a background with a prefab, optionally allowing the background to rotate.
