@@ -31,14 +31,15 @@ public class StepObject : MonoBehaviour {
 	public Vector3 MoveDirection;
 	public float SecondsPerStep;
 	public int NumberOfStepsBeforeStopping;
-	public bool Moving;
+	public bool StartMoving;
 
 	float Timer = 0;
-	int Counter;
+	int Counter = 0;
+	private bool Moving;
 
 	void Start () {
 		if(SecondsPerStep > 0 && MoveDirection != Vector3.zero)
-			Moving = true;
+			Moving = StartMoving;
 	}
 	
 	void Update () {
