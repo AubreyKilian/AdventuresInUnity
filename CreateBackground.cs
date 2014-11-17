@@ -16,14 +16,14 @@ using System.Collections;
  * 
  * Usage:
  * 
- * 1) Create a plane - Disable the renderer
- * 2) Point your camera straight at the plane (in 2D, Orthographic mode works best)
+ * 1) Create an empty game object and name is something like "Background"
+ * 2) Place the object in the center of your camera (in 2D, Orthographic mode works best, camera at 0,0,-10, object at 0,0,0)
  * 3) Drag this script into your Project
  * 4) Drag the script onto the plane
  * 5) Drag your image you want to use into your project
- * 6) Create a prefab of the image (Drag image from Project into Hierarchy, Draw image from Hierarchy to Project, Delete image from Hierarchy)
- * 7) Click plane
- * 8) Drag newly created prefab into "Background Image" property of script in Inspector
+ * 6) Create a prefab of the image (Drag image from Project into Hierarchy, Drag image from Hierarchy to Project, Delete image from Hierarchy)
+ * 7) Select your background object
+ * 8) Drag the newly created prefab into "Background Image" property of script in Inspector
  * 9) Adjust other optional values in Inspector for script
  * 
  */
@@ -36,17 +36,22 @@ public class CreateBackground : MonoBehaviour
 	public float ZOffset;
 	public int NumberExtraTiles; // The script always adds 1 until we get an uneven number, to make sure we have a tile in the middle always
 	public bool RotateBackground;
+	public bool RotateAntiClockwise;
 	public float RotateSpeed;
+	private int ReverseAdjuster = -1;
 
 	void FixedUpdate () {
 		if(RotateBackground && BackgroundImage && RotateSpeed > 0) 
-			transform.RotateAround (new Vector3 (0, 0, 0), new Vector3 (0, 0, 2), RotateSpeed * Time.deltaTime);
+			transform.RotateAround (new Vector3 (0, 0, 0), new Vector3 (0, 0, 2), RotateSpeed * Time.deltaTime * ReverseAdjuster);
 	}
 
 	void Start ()
 	{
 		if(BackgroundImage)
 			doBackground ();
+
+		if(RotateAntiClockwise)
+			ReverseAdjuster = 1;
 	}
 
 	void doBackground ()
